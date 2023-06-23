@@ -65,7 +65,9 @@
     (.close reader)
     (.close s)
     (if (:error result)
-      (System/exit 1)
+      (binding [*out* *err*]
+        (println result)
+        (System/exit 1))
       (System/exit 0))))
 
 ;; Local Variables:

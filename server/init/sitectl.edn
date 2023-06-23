@@ -29,7 +29,8 @@
   access-tokens {:task (juxt.site.bb.bootstrap.tasks/ls-type "access-token")}
 
   install-group {:task (let [spec {:alias {:a :no-confirm}}
-                             {no-confirm :no-confirm} (cli/parse-opts *command-line-args* spec)]
+                             {no-confirm :no-confirm}
+                             (cli/parse-opts *command-line-args* spec)]
                          (binding [juxt.site.bb.bootstrap.tasks/*no-confirm* no-confirm]
                            (juxt.site.bb.bootstrap.tasks/install-group
                             {:group (first *command-line-args*)})))}

@@ -175,7 +175,7 @@
                                 opts)
                          (dissoc :heading :description))})]
       (when (= status 130)
-         (System/exit 2))
+        (System/exit 2))
       (when-not (zero? status)
         (throw
          (ex-info "gum process exited with non-zero status" {:status status})))
